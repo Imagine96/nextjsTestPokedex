@@ -1,6 +1,8 @@
 import Layout from "../Components/Layout";
 import Navigations from '../Components/UI/Navigations/Navigations'
 
+//ojo esto está al berro, la info debería ser un componente aparte pokeInfo o yo q se pero por la mala estructura de este componente se enreda usar el utility.js
+
 export default function pokemon(props) {
     return(
         <Layout tittle={props.pokemonData.name} >

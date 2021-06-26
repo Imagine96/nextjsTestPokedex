@@ -1,15 +1,19 @@
 import Link from 'next/Link'
+import getTWClasses from '../../utility'
 
 const pokeList = props => {
+
+  const [parentClasses, childrensClasses] = getTWClasses('pokeListComponent')
+  
     return(
         <ul>
         {props.pokemon.map((poke, index) => {
           return (<li key={index}>
             <Link href={`/pokemon?id=${index + 1}`}>
-                <a className='p-4 border-gray my-4 flex items-center text-lg bg-gray-200'>
-                    <img className='w-20 h-20 mx-8' src={poke.imageURL} alt={poke.name} />
+                <a className= {parentClasses} >
+                    <img className={childrensClasses.img.join(' ')} src={poke.imageURL} alt={poke.name} />
                     <span> # {index + 1} </span>
-                    <p className='capitalize'> {poke.name} </p>
+                    <p className={childrensClasses.p.join(' ')}> {poke.name} </p>
                 </a> 
             </Link>
           </li>)

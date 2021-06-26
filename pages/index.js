@@ -1,12 +1,16 @@
 import Layout from "../Components/Layout"
 import PokeList from '../Components/PokemonList/PokemonList'
 
+import getTWClasses from "../utility";
+
 export default function Home(props) {
+
+  const [parentClasses, childrensClasses] = getTWClasses('homePageComponent')
 
   return (
     <div>
       <Layout>
-        <h1 className='text-4xl mb-8 text-center' >Nextjs Pókedex</h1>
+        <h1 className={childrensClasses.h1.join(' ')} >Nextjs Pókedex</h1>
         <PokeList pokemon={props.pokemon} />
       </Layout> 
     </div>

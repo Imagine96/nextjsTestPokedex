@@ -1,9 +1,11 @@
 import HomeButton from './HomeButtton'
 import NextPrevButtons from './NextPrevButtons'
+import getTWClasses from '../../../utility.js'
 
 const navigations = (props) => {
+    const classes = getTWClasses('navigationsComponent')
     return(
-        <div className='absolute top-0 bootom-0 left-0 right-0' >
+        <div className={classes} >
             <HomeButton /> 
             <NextPrevButtons id={props.currentId} /> 
         </div>
